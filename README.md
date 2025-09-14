@@ -1,0 +1,1 @@
+Hello. This is Lab1 Exercise.
