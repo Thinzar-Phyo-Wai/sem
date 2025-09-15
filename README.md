@@ -6,3 +6,6 @@ Today I am doing Lab2 Exercise.
 [![LICENSE](https://img.shields.io/github/license/<Thinzar-Phyo-Wai>/devops.svg?style=flat-square)](https://github.com/<Thinzar-Phyo-Wai>/devops/blob/master/LICENSE)
 
 [![Releases](https://img.shields.io/github/release/<Thinzar-Phyo-Wai>/devops/all.svg?style=flat-square)](https://github.com/<Thinzar-Phyo-Wai>/devops/releases)
+
+# DevOps
+![GitHub Workflow Status (develop)](https://img.shields.io/github/workflow/status/<Thinzar-Phyo-Wai>/<sem>/<action name taken from main.yml>/<develop>?style=flat-square)
