@@ -1,8 +1,3 @@
-#FROM openjdk:23
-#COPY ./target/classes/com /tmp/com
-#WORKDIR /tmp
-#ENTRYPOINT ["java", "com.napier.sem.App"]
-
 FROM openjdk:23
 COPY ./target/seMethod-1.0-SNAPSHOT-jar-with-dependencies.jar /tmp
 WORKDIR /tmp
