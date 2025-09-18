@@ -1,18 +1,17 @@
 package com.napier.sem;
 
+
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
 import org.bson.Document;
-public class App
-{
-    public static void main(String[] args)
-    {
+
+public class App {
+    public static void main(String[] args) {
         // Connect to MongoDB on local system - we're using port 27000
         //MongoClient mongoClient = MongoClients.create("mongodb://localhost:27000");
-        MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
-
+        MongoClient mongoClient = MongoClients.create("mongodb://mongo-dbserver");
         // Get a database - will create when we use it
         MongoDatabase database = mongoClient.getDatabase("mydb");
         // Get a collection from the database
@@ -21,7 +20,7 @@ public class App
         Document doc = new Document("name", "Thinzar Phyo Wai")
                 .append("class", "DevOps")
                 .append("year", "2025")
-                .append("result", new Document("Coursework marks", 95).append("Exam marks", 85));
+                .append("result", new Document("CW", 95).append("EX", 85));
         // Add document to collection
         collection.insertOne(doc);
 
