@@ -1,4 +1,4 @@
 FROM openjdk:23
-COPY ./target/seMethod-1.0-SNAPSHOT-jar-with-dependencies.jar /tmp
+COPY ./target/devops.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "-jar", "seMethod-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+ENTRYPOINT ["java", "-jar", "devops.jar", "db:3306", "10000"]
