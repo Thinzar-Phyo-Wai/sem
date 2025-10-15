@@ -8,7 +8,7 @@
 
 [![Releases](https://img.shields.io/github/release/Thinzar-Phyo-Wai/sem/all.svg?style=flat-square)](https://github.com/Thinzar-Phyo-Wai/sem/releases)
 
-[//]: # ([![codecov]&#40;https://codecov.io/github/myo-papa-kyaw/Group1DevOpsCoursework/branch/master/graph/badge.svg?token=CRC7UAM7HH&#41;]&#40;https://codecov.io/github/myo-papa-kyaw/Group1DevOpsCoursework&#41;)
+[![codecov](https://codecov.io/github/Thinzar-Phyo-Wai/sem/branch/master/graph/badge.svg?token=CRC7UAM7HH)](https://codecov.io/github/Thinzar-Phyo-Wai/sem)
 
 
 
