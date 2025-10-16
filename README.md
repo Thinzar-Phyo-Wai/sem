@@ -12,6 +12,12 @@
 
 [![codecov](https://codecov.io/github/Thinzar-Phyo-Wai/sem/branch/master/graph/badge.svg?token=FBHWWI6LI9)](https://codecov.io/github/Thinzar-Phyo-Wai/sem)
 
+[//]: # ()
+[//]: # ([![codecov]&#40;https://codecov.io/github/Thinzar-Phyo-Wai/sem/graph/branch/master/badge.svg?token=FBHWWI6LI9&#41;]&#40;https://codecov.io/github/Thinzar-Phyo-Wai/sem&#41;)
+
+[//]: # ()
+[//]: # ([![codecov]&#40;https://codecov.io/github/Thinzar-Phyo-Wai/sem/graph/badge.svg?token=FBHWWI6LI9&#41;]&#40;https://codecov.io/github/Thinzar-Phyo-Wai/sem&#41;)
+
 
 
 
