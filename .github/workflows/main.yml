@@ -1,4 +1,5 @@
 name: A workflow for my Global World Population App
+
 on:
   push:
     branches:
@@ -17,20 +18,23 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
       - name: Set up JDK 23
         uses: actions/setup-java@v2
         with:
           java-version: '23'
           distribution: 'adopt'
+
       - name: Unit Tests
         run: mvn -Dtest=com.napier.sem.MySQL_Test_Unit_Test test
+
       - name: CodeCov
         uses: codecov/codecov-action@v5
         with:
-          #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           directory: ./target/site/jacoco
-          flags: Unit Tests # optional
-          verbose: true # optional (default = false)
+          flags: Unit Tests
+          verbose: true
 
   IntegrationTests:
     name: Integration Tests
@@ -40,24 +44,28 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
       - name: Set up JDK 23
         uses: actions/setup-java@v2
         with:
           java-version: '23'
           distribution: 'adopt'
+
       - name: Integration Tests
         run: |
           docker compose up -d db
           mvn -Dtest=com.napier.sem.MySQL_Test_Integration_Test test
+
       - name: Shutdown
         run: docker compose down
+
       - name: CodeCov
         uses: codecov/codecov-action@v5
         with:
-          #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           directory: ./target/site/jacoco
-          flags: Integration Tests # optional
-          verbose: true # optional (default = false)
+          flags: Integration Tests
+          verbose: true
 
   build:
     name: Build Run in Docker and Deploy Release
@@ -67,21 +75,23 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
       - name: Set up JDK 23
         uses: actions/setup-java@v2
         with:
           java-version: '23'
           distribution: 'adopt'
+
       - name: Package and Run docker compose
         run: |
           mvn package -DskipTests
           docker compose up --abort-on-container-exit
-      - name: Copy Output
-        run: |
-          mkdir -p reports
-          docker container cp sem-app-1:./tmp/reports/. ./reports
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.2.5
+
+      - name: Create Release
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          branch: reports # The branch the action should deploy to.
-          folder: reports # The folder we are copying
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: "latest"
+          files: |
+            ./target/*.jar
